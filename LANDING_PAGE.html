@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>landing page</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+
+    <nav>
+        <ul>
+
+            <a href="http://facebook.com"><i class="fab fa-facebook-square"></i></a>
+            <a href="http://twitter.com"><i class="fab fa-twitter-square"></i></a>
+            <a href="http://gmail.com"><i class="fas fa-envelope"></i></a>
+        </ul>
+    </nav>
+
+<script src="https://kit.fontawesome.com/a00b31e469.js" crossorigin="anonymous"></script>
+
+    <div class="container">
+        <h1>THE NEXT BIG THING IS COMING</h1>
+
+        <div class="count">
+            <div class="countd">
+                <span id="days">00</span>
+                DAYS
+            </div>
+            <div class="countd">
+                <span id="hours">00</span>
+                HOURS
+            </div>
+
+            <div class="countd">
+                <span id="minutes">00</span>
+                MINUTES
+            </div>
+
+            <div class="countd">
+                <span id="seconds">00</span>
+                SECONDS
+            </div>
+        </div>
+    </div>
+<script type="text/javascript">
+
+    var count = new Date("jan 1,2021 00:00:00").getTime();
+    var x = setInterval(function(){
+        var now = new Date().getTime();
+        var d = count - now;
+
+        var days = Math.floor(d/(1000*60*60*24));
+        var hours = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+        var minutes = Math.floor((d%(1000*60*60))/(1000*60));
+        var seconds = Math.floor((d%(1000*60))/(1000));
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+        if(d <= 0){
+            clearInterval(x);
+        }
+
+    },1000);
+
+</script>
+
+</body>
+</html>
